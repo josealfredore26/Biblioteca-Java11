@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="613.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BibliotecaController">
+    <children>
+      <TabPane fx:id="tabPane" prefHeight="613.0" prefWidth="898.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="librosTab" text="Libros">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                          <HBox fx:id="bottomBox" alignment="CENTER_RIGHT" layoutY="539.0" prefHeight="46.0" prefWidth="361.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="537.0">
+                              <children>
+                                  <TextField fx:id="buscarLibroField" promptText="ISBN del libro a buscar" />
+                                  <Button fx:id="buscarLibroButton" text="Buscar Libro" />
+                                  <Button fx:id="eliminarLibroButton" text="Eliminar Libro" />
+                              </children>
+                              <padding>
+                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </padding>
+                          </HBox>
+                        <TableView fx:id="librosTable" layoutX="7.0" layoutY="14.0" prefHeight="530.0" prefWidth="378.0">
+                          <columns>
+                            <TableColumn fx:id="tituloColumn" prefWidth="75.0" text="Título" />
+                            <TableColumn fx:id="autorColumn" prefWidth="75.0" text="Autor" />
+                              <TableColumn fx:id="isbnColumn" prefWidth="75.0" text="ISBN" />
+                              <TableColumn fx:id="anioColumn" prefWidth="152.0" text="Año de Creación" />
+                          </columns>
+                        </TableView>
+                        <GridPane layoutX="473.0" layoutY="64.0" prefHeight="174.0" prefWidth="314.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Título" />
+                              <Label text="Autor" GridPane.rowIndex="1" />
+                              <Label text="ISBN" GridPane.rowIndex="2" />
+                              <Label text="Año" GridPane.rowIndex="3" />
+                                  <TextField fx:id="tituloField" promptText="Título" GridPane.columnIndex="1" />
+                                  <TextField fx:id="autorField" promptText="Autor" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                  <TextField fx:id="isbnField" promptText="ISBN" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                  <TextField fx:id="anioField" promptText="Año" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                            <Button fx:id="agregarLibroButton" layoutX="481.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" text="Agregar Libro" />
+                        <Label layoutX="585.0" layoutY="23.0" prefHeight="24.0" prefWidth="91.0" text="Agregar Libro" />
+                        <Button layoutX="665.0" layoutY="258.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="Actualizar Libro" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="autoresTab" text="Autores">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="autoresTable" layoutX="7.0" layoutY="14.0" prefHeight="530.0" prefWidth="378.0">
+                           <columns>
+                              <TableColumn fx:id="idColumn" prefWidth="57.599974036216736" text="Id" />
+                              <TableColumn fx:id="nombreColumn" prefWidth="159.19995880126953" text="Nombre" />
+                              <TableColumn fx:id="nacionalidadColumn" prefWidth="163.2000732421875" text="Nacionalidad" />
+                           </columns>
+                        </TableView>
+                        <HBox fx:id="bottomBox1" alignment="CENTER_RIGHT" layoutX="123.0" layoutY="539.0" prefHeight="46.0" prefWidth="125.0" spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Button fx:id="eliminarAutorButton" text="Eliminar Autor" />
+                           </children>
+                        </HBox>
+                        <GridPane layoutX="473.0" layoutY="64.0" prefHeight="174.0" prefWidth="314.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nombre" />
+                              <Label text="Nacionalidad" GridPane.rowIndex="1" />
+                              <TextField fx:id="nombreAutorField" promptText="Nombre" GridPane.columnIndex="1" />
+                              <TextField fx:id="nacionalidadAutorField" promptText="Nacionalidad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label layoutX="585.0" layoutY="23.0" prefHeight="24.0" prefWidth="91.0" text="Agregar Autor" />
+                        <Button fx:id="agregarAutorButton" layoutX="515.0" layoutY="258.0" prefHeight="26.0" prefWidth="114.0" text="Agregar Autor" />
+                        <Button fx:id="actualizarAutorButton" layoutX="676.0" layoutY="258.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" text="Actualizar Autor" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>
