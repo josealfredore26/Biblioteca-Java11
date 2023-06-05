@@ -1,4 +1,1 @@
-# Biblioteca-JavaFX11-JDK11
-# Biblioteca-JDK11-JavaFX11
-# Biblioteca-JDK11-JavaFX11
-# Biblioteca-Java11
+Proyecto sencillo de una biblioteca con Java 11 y JavaFX 11
